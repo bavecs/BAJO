@@ -9,6 +9,8 @@ canvas#bg {
     left: 0;
 }
 
-html, body {
-    overscroll-behavior: none;
-  }
+
+
+.content {
+    height: 4000px;
+}

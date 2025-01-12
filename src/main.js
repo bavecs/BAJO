@@ -118,7 +118,6 @@ document.addEventListener("touchmove", mousemove)
 
 
 
-console.log(fadeInArray);
 
 function fadeIn() {
 

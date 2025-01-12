@@ -1,19 +1,131 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RugWiki</title>
-    <link rel="stylesheet" href="./src/style.css" />
-  </head>
-  <body>
 
-    <canvas id="bg"> </canvas>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BAJO</title>
+  <link rel="stylesheet" href="./src/style.css" />
+</head>
 
-    <div class="content">
-      s
-    </div>
+<body>
+  <div class="fixed top-0 left-0 z-0 w-full h-full bg-gradient-to-b from-black/50 to-transparent ">
+  </div>
 
-    <script type="module" src="/src/main.js"></script>
-  </body>
+  <canvas id="bg"></canvas>
+
+  <div class="pageContainer">
+
+    <nav class="fixed top-0 z-30 w-full ">
+      <div class="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
+        <a href="/" class="flex items-center ">
+          <img src="./Logo.png" class="h-14" alt="BAJO">
+        </a>
+        <div class="flex space-x-3 lg:order-2 lg:space-x-0">
+          <button data-collapse-toggle="navbar-sticky" type="button"
+            class="inline-flex items-center justify-center w-10 h-10 p-2 text-sm text-white rounded-lg lg:hidden "
+            aria-controls="navbar-sticky" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-10 h-10" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+              viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M1 1h15M1 7h15M1 13h15" />
+            </svg>
+          </button>
+        </div>
+        <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-sticky">
+          <ul class="flex flex-col p-4 mt-4 font-medium text-white lg:p-0 lg:space-x-8 lg:flex-row lg:mt-0">
+            <li>
+              <a href="#" class="block px-3 py-2 text-white lg:p-0" aria-current="page">Home</a>
+            </li>
+            <li>
+              <a href="#" class="block px-3 py-2 text-white lg:p-0">About</a>
+            </li>
+            <li>
+              <a href="#" class="block px-3 py-2 text-white lg:p-0">Services</a>
+            </li>
+            <li>
+              <a href="#" class="block px-3 py-2 text-white lg:p-0">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+
+    <section class="h-full">
+      <div class="relative z-10 max-w-screen-xl px-6 py-16 mx-auto text-left lg:py-18 sm:px-16 lg:px-48">
+        <a href="#"
+          class="inline-flex items-center justify-between p-1 px-1 overflow-hidden text-sm text-indigo-700 rounded-full group bg-indigo-100/20 backdrop-blur-lg pe-4 mb-7 hover:text-white ">
+          <span class="text-xs bg-indigo-600 h-max rounded-full text-white px-4 py-1.5 me-3">New</span>
+          <span
+            class="max-w-full text-sm font-medium text-indigo-400 group-hover:text-white ">NextGen AI is dropped! See what's new</span>
+          <svg class="w-2.5 h-2.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 6 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="m1 9 4-4-4-4" />
+          </svg>
+        </a>
+        <h1 class="py-4 mb-4 text-5xl font-extrabold leading-none tracking-tight text-white fadeIn">
+          Your Trusted Cloud Hosting Partner
+        </h1>
+        <p class="mb-8 text-lg font-normal lg:text-xl fadeIn">
+          We provide cutting-edge cloud hosting services tailored to meet the unique needs of your business, no matter
+          its size.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <div class="h-[50vh]"></div>
+
+
+    <section id="features">
+
+      <div class="ease-in-out f-item group fadeIn">
+        <figure class="bg-[url('/images/szerver.png')] group-hover:bg-[url('/images/szerver-hover.png')] transition-all "></figure>
+        <div class="ml-10 mt-[-40px] transition-colors">
+          <h2 class="mb-3 text-3xl text-indigo-300 group-hover:text-indigo-500">Scalable Solutions for Growing Businesses</h2>
+          <span class="text-indigo-300/80 group-hover:text-indigo-500/80">Whether you're a startup or a large enterprise, our cloud hosting adapts to your needs. Easily scale your resources up or down based on traffic spikes, business growth, or seasonal demand. Pay only for what you use.</span>
+        </div>  
+      </div>
+
+      <div class="ease-in-out f-item group fadeIn">
+        <figure class="bg-[url('/images/pajzs.png')] group-hover:bg-[url('/images/pajzs-hover.png')] transition-all "></figure>
+        <div class="ml-10 mt-[-40px] transition-colors">
+          <h2 class="mb-3 text-3xl text-indigo-300 group-hover:text-indigo-500">Robust Security You Can Trust</h2>
+          <span class="text-indigo-300/80 group-hover:text-indigo-500/80">We understand how critical data security is to your business. Our cloud infrastructure is equipped with enterprise-level security features like firewalls, DDoS protection, SSL encryption, and regular backups. Keep your sensitive data protected 24/7.</span>
+          </div>
+      </div>
+
+      <div class="ease-in-out f-item group fadeIn">
+        <figure class="bg-[url('/images/mutato.png')] group-hover:bg-[url('/images/mutato-hover.png')] transition-all "></figure>
+        <div class="ml-10 mt-[-40px] transition-colors">
+          <h2 class="mb-3 text-3xl text-indigo-300 group-hover:text-indigo-500">High Performance, Always-On Availability</h2>
+          <span class="text-indigo-300/80 group-hover:text-indigo-500/80">Your online presence should never be slow. Our cloud hosting platform ensures fast loading times with global server locations that minimize latency. Experience 99.99% uptime, keeping your business available to customers around the clock.</span>
+          </div>
+      </div>
+
+      <div class="ease-in-out f-item group fadeIn">
+        <figure class="bg-[url('/images/pezermek.png')] group-hover:bg-[url('/images/pezermek-hover.png')] transition-all "></figure>
+        <div class="ml-10 mt-[-40px] transition-colors">
+          <h2 class="mb-3 text-3xl text-indigo-300 group-hover:text-indigo-500">Managed Services for Hassle-Free Hosting</h2>
+          <span class="text-indigo-300/80 group-hover:text-indigo-500/80">Don’t want to manage the tech yourself? No problem. Our expert team is here to handle server maintenance, monitoring, updates, and troubleshooting—so you can focus on what matters most: running your business.</span>
+          </div>
+      </div>
+
+
+    </section>
+
+  </div>
+
+
+
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>

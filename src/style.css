@@ -32,12 +32,12 @@
 
   .fadeIn {
     @apply ease-in-out transition-all opacity-0;
-    -webkit-transition-delay: .3s;
-    -o-transition-delay: .3s;
-    transition-delay: .3s;
-    -webkit-transition: .4s;
-    -o-transition: .4s;
-    transition: .4s;
+    -webkit-transition-delay: 1s;
+    -o-transition-delay: 1s;
+    transition-delay: 1s;
+    -webkit-transition: .6s;
+    -o-transition: .6s;
+    transition: .6s;
   }
   .fadeIn.fade {
     @apply opacity-100

@@ -6,7 +6,11 @@ const primaryColor = new THREE.Color(0x050057)
 const canvasDIV = document.querySelector('#bg');
 
 let fadeInArray = document.querySelectorAll(".fadeIn");
-
+let isMobile = false
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+    // true for mobile device
+    isMobile = true
+}
 
 var scrollPosition = 0
 var model
@@ -27,10 +31,7 @@ dirLight.position.set(0, 20, 10);
 scene.add(dirLight);
 
 
-
 const pointlight = new THREE.PointLight(0x9998f9, 200)
-
-
 
 
 pointlight.position.set(0, 1, 14)
@@ -81,6 +82,17 @@ loader.load('/minta-modern-export.gltf', function (gltf) {
 }, undefined, (error) => console.error(error))
 
 
+if (!isMobile) {
+    window.addEventListener("resize", () => {
+
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+
+    renderer.setSize( window.innerWidth, window.innerHeight );
+
+});
+}
+
 const interaction = () => {
     requestAnimationFrame(interaction)
     renderer.render(scene, camera)
@@ -103,6 +115,8 @@ document.addEventListener("touchmove", mousemove)
 
 
 
+
+
  document.addEventListener("scroll", () => {
     scrollPosition = window.scrollY / window.innerHeight
     if (model) {
@@ -110,7 +124,6 @@ document.addEventListener("touchmove", mousemove)
         model.rotation.y = scrollPosition
         model.rotation.x = Math.PI / 3 - (scrollPosition / 1.5)
         dirLight.intensity = 5 - (scrollPosition * 10)
-        console.log(scrollPosition)
     }
 
     fadeIn()
@@ -118,11 +131,10 @@ document.addEventListener("touchmove", mousemove)
 
 
 
-
 function fadeIn() {
 
     fadeInArray.forEach(elem => {
-        var distInView = elem.getBoundingClientRect().top - window.innerHeight + 60;
+        var distInView = elem.getBoundingClientRect().top - window.innerHeight + 30;
         if (distInView < 0) {
             elem.classList.add("fade");
         } else {
